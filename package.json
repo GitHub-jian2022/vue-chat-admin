@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "compression": "^1.7.4",
     "crypto-js": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.5.2",
