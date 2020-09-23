@@ -6,9 +6,12 @@ const Koa = require('koa'),
       path = require('path'),
       url = require('url'),
       jsonp = require('koa-jsonp');
+      compression = require('compression')
 
 const app = new Koa();
 const router = new Router();
+
+app.use(compression())
 
 /*
 *配置中间件
