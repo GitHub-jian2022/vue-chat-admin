@@ -42,12 +42,7 @@ router.post('/getUserInfo', auth, async (ctx) => {
     const { userId } = token
     let res = fs.readFileSync(path.join(__dirname, '../../../static/user/user.json'), 'utf8')
     let { data } = JSON.parse(res)
-    let user = {}
-    data.some(item => {
-        if (item.userId === userId) {
-            user = item
-        }
-    })
+    let [user] = data.filter(item => item.userId === userId)
     ctx.body = {
         msg: 'success',
         code: 200,
